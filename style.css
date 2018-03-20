@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+	color: white;
+    font-family: verdana;
+}
+
+nav {
+	background-color: black;
+}
+
+label {
+	color: white;
+	border-color: white;
+}
+
+.border {
+	border-color: white;
+}
+
+.search-button {
+	color: white;
+	background-color: black;
+	border-color: white;
+}
+
+.logout-button {
+	color: white;
+	background-color: red;
+}
