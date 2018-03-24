@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- Memehub CSS -->
+	<link rel="stylesheet" href="css/style.css">
+
+    <title>Memehub</title>
+  </head>
+  <body>
+    <div class="blind" id="fade"></div>
+    <div class="card text-white bg-dark popup" id="popup-share">
+        <div class="card-header">Share this meme</div>
+        <div class="card-body" style="text-align: center;">
+            <h6 class="card-title">Choose a social media site or copy the direct link</h6>
+            <div style="font-size: 36px;">
+                <span class="fa fa-facebook-square share-icon"></span>
+                <span class="fa fa-twitter-square share-icon"></span>
+                <span class="fa fa-tumblr-square share-icon"></span>
+                <span class="fa fa-pinterest-square share-icon"></span>
+                <span class="fa fa-reddit-square share-icon"></span>
+                <span class="fa fa-github-square share-icon"></span>
+            </div>
+            <div class="input-group" style="margin-left: 0; margin-right: 0;">
+                <input id="share-link" type="text" class="form-control input-sm" readonly value="https://memehub.lol/meme/1383">
+                <span class="input-group-btn">
+                    <button id="share-clipboard" type="button" class="btn btn-default search-button">
+                        &nbsp;<span class="fa fa-clipboard"></span>&nbsp;
+                    </button>
+                </span>
+            </div>
+            <button id="share-close" class="btn btn-danger" style="margin-top: 15px; ">Close</button>
+        </div>
+    </div>
+    <div class="card text-white bg-dark popup" id="popup-create">
+        <div class="card-header">Create a meme</div>
+        <div class="card-body">
+            <div class="create-image-container">
+                <img id="create-upload-image" class="create-image">
+                <input id='create-upload-input' type='file' style='display: none;'/>
+                <button id='create-upload-button' class="btn btn-default upload-button">
+                    Upload
+                    &nbsp;<span class="fa fa-upload"></span>&nbsp;
+                </button>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="create-title">Title</label>
+                    <input type="text" class="form-control" id="create-title" placeholder="Enter title">
+                </div>
+                <div class="form-group">
+                    <label for="create-tags">Tags</label>
+                    <input type="text" class="form-control" id="create-tags" placeholder="Enter comma-separated tags">
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <button type="button" id="create-publish" class="btn btn-success create-form-button">Publish</button><button type="button" id="create-cancel" class="btn btn-danger create-form-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="col-3">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" width="200px">
+            </a>
+        </div>
+        <div class="col-6">
+            <div class="input-group col-8 search-form">
+                <input type="text" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default search-button">
+                        &nbsp;<span class="fa fa-search"></span>&nbsp;
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <div class="row" style="margin-left: auto;">
+                    <div class="col-4">
+                    <img src="img/profile.png" width="40px">
+                    </div>
+                    <div class="col-8">
+                        <p class="logout-label">Logout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+      <div class="container">
+        <!-- Meme 1 -->
+        <div class="row" id="meme-1">
+            <div class="col-2">
+                <span id="memenav-left-1" class="fa fa-angle-left arrow-left"></span>
+            </div>
+            <div class="col-8 meme-container card" style="background-color: #060606;">
+                <p class="meme-title">Stairway to heaven</p>
+                <div>
+                    <div class="meme-box">
+                        <img src="img/meme_3.png" class="meme-image"/>
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <div class="row">
+                        <div class="col-6">
+                            <span class="meme-info-rating" id="rating-1">
+                                <span class="star" id="star-1-1">★</span><span class="star" id="star-2-1">☆</span><span class="star" id="star-3-1">☆</span><span class="star" id="star-4-1">☆</span><span class="star" id="star-5-1">☆</span>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <p class="meme-info-views">1337 views</p>
+                        </div>
+                    </div>
+                    <div class="row meme-tabs">
+                        <div class="col-6 meme-tab-selected" id="tabview-translations-1">
+                            <p class="meme-tab-label" id="tabselect-translations-1">Translations</p>
+                        </div>
+                        <div class="col-6 meme-tab-unselected" id="tabview-comments-1">
+                            <p class="meme-tab-label" id="tabselect-comments-1">Comments</p>
+                        </div>
+                    </div>
+                    <div id="tab-translations-1">
+                        <div class="row meme-translation-form" id="translation-form-1" style="display: none;">
+                                <textarea class="form-control centered-horiz" rows="2" placeholder="Meme translation"></textarea>
+                                <button class="centered-horiz meme-translation-form-button btn btn-default">Submit Translation</button>
+                        </div>
+                        <div class="row meme-translations">
+                            <div class="container">
+                                <div class="row meme-translation" id="translation-1-1">
+                                    <div class="col-1 meme-translation-vote" style="padding-right: 0em;">
+                                        <span id="vote-up-1-1" class="fa fa-caret-up vote"></span>
+                                        <p id="score-1-1" style="margin-bottom: 0px;">69</p>
+                                        <span id="vote-down-1-1" class="fa fa-caret-down vote"></span>
+                                    </div>
+                                    <div class="col-10 meme-translation-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sollicitudin libero. </p>
+                                    </div>
+                                </div>
+                                <div class="row meme-translation" id="translation-1-2" style="display: none;">
+                                    <div class="col-1 meme-translation-vote" style="padding-right: 0em;">
+                                        <span class="fa fa-caret-up vote" id="vote-up-1-2"></span>
+                                        <p id="score-1-2" style="margin-bottom: 0px;">0</p>
+                                        <span class="fa fa-caret-down vote" id="vote-down-1-2"></span>
+                                    </div>
+                                    <div class="col-10 meme-translation-content">
+                                        <p>Fusce mauris risus, faucibus nec dignissim a, feugiat id ex. Fusce pellentesque venenatis nunc, et varius nisl rhoncus ut.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="meme-bottom-option" id="option-translation-view-1">
+                                    View More
+                                </span>
+                            </div>    
+                            <div class="col-6" style="text-align: right;">
+                                <span class="meme-bottom-option" id="option-translation-add-1">
+                                    Add Translation
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-comments-1" style="display: none;">
+                        <div class="row meme-comment-form">
+                                <textarea class="form-control centered-horiz" rows="2" placeholder="Comment text"></textarea>
+                                <button class="centered-horiz meme-comment-form-button btn btn-default">Submit Comment</button>
+                        </div>
+                        <div class="row meme-comments">
+                            <div class="container">
+                                <div class="row meme-comment" id="comment-1-1">
+                                    <div class="col-1 meme-comment-info" style="padding-right: 0em;">
+                                        
+                                    </div>
+                                    <div class="col-10 meme-comment-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sollicitudin libero. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="meme-bottom-option" id="option-comment-view-1" style="margin-left: auto; margin-right: auto;">
+                                Show Comments
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <span id="memenav-right-1" class="fa fa-angle-right arrow-right"></span>
+                <span class="fa fa-download download"></span>
+                <span id="share-1" class="fa fa-share-alt share"></span>
+            </div>
+        </div>
+        <!-- End meme -->
+        <!-- Meme 2 -->
+        <div class="row" id="meme-2" style="display: none;">
+            <div class="col-2">
+                <span id="memenav-left-2" class="fa fa-angle-left arrow-left"></span>
+            </div>
+            <div class="col-8 meme-container card" style="background-color: #060606;">
+                <p class="meme-title">Hypebeasts at RIT be like</p>
+                <div>
+                    <div class="meme-box">
+                        <img src="img/meme_2.jpg" class="meme-image"/>
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <div class="row">
+                        <div class="col-6">
+                            <span class="meme-info-rating" id="rating-2">
+                                <span class="star" id="star-1-2">★</span><span class="star" id="star-2-2">☆</span><span class="star" id="star-3-2">☆</span><span class="star" id="star-4-2">☆</span><span class="star" id="star-5-2">☆</span>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <p class="meme-info-views">1337 views</p>
+                        </div>
+                    </div>
+                    <div class="row meme-tabs">
+                        <div class="col-6 meme-tab-selected" id="tabview-translations-2">
+                            <p class="meme-tab-label" id="tabselect-translations-2">Translations</p>
+                        </div>
+                        <div class="col-6 meme-tab-unselected" id="tabview-comments-2">
+                            <p class="meme-tab-label" id="tabselect-comments-2">Comments</p>
+                        </div>
+                    </div>
+                    <div id="tab-translations-2">
+                        <div class="row meme-translation-form" id="translation-form-2" style="display: none;">
+                                <textarea class="form-control centered-horiz" rows="2" placeholder="Meme translation"></textarea>
+                                <button class="centered-horiz meme-translation-form-button btn btn-default">Submit Translation</button>
+                        </div>
+                        <div class="row meme-translations">
+                            <div class="container">
+                                <div class="row meme-translation" id="translation-2-1">
+                                    <div class="col-1 meme-translation-vote" style="padding-right: 0em;">
+                                        <span id="vote-up-2-1" class="fa fa-caret-up vote"></span>
+                                        <p id="score-2-1" style="margin-bottom: 0px;">33</p>
+                                        <span id="vote-down-2-1" class="fa fa-caret-down vote"></span>
+                                    </div>
+                                    <div class="col-10 meme-translation-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sollicitudin libero. </p>
+                                    </div>
+                                </div>
+                                <div class="row meme-translation" id="translation-2-2" style="display: none;">
+                                    <div class="col-1 meme-translation-vote" style="padding-right: 0em;">
+                                        <span class="fa fa-caret-up vote" id="vote-up-2-2"></span>
+                                        <p id="score-2-2" style="margin-bottom: 0px;">21</p>
+                                        <span class="fa fa-caret-down vote" id="vote-down-2-2"></span>
+                                    </div>
+                                    <div class="col-10 meme-translation-content">
+                                        <p>Fusce mauris risus, faucibus nec dignissim a, feugiat id ex. Fusce pellentesque venenatis nunc, et varius nisl rhoncus ut.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="meme-bottom-option" id="option-translation-view-2">
+                                    View More
+                                </span>
+                            </div>    
+                            <div class="col-6" style="text-align: right;">
+                                <span class="meme-bottom-option" id="option-translation-add-2">
+                                    Add Translation
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-comments-2" style="display: none;">
+                        <div class="row meme-comment-form">
+                                <textarea class="form-control centered-horiz" rows="2" placeholder="Comment text"></textarea>
+                                <button class="centered-horiz meme-comment-form-button btn btn-default">Submit Comment</button>
+                        </div>
+                        <div class="row">
+                            <span class="meme-bottom-option" id="option-comment-view-2" style="margin-left: auto; margin-right: auto;">
+                                Show Comments
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <span id="memenav-right-2" class="fa fa-angle-right arrow-right"></span>
+                <span class="fa fa-download download"></span>
+                <span id="share-1" class="fa fa-share-alt share"></span>
+            </div>
+        </div>
+        <!-- End meme -->
+      </div>
+      <div class="layout-select">
+        <span id="layout-horizontal" class="fa fa-arrows-h layout-select-arrow layout-select-selected"></span>
+        <span id="layout-vertical" class="fa fa-arrows-v layout-select-arrow layout-select-unselected"></span>
+      </div>
+      <div id="create" class="create-button">
+          <p class="create-button-plus">+</p>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="js/browse.js"></script>
+  </body>
+</html>
