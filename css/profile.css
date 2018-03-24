@@ -1,0 +1,379 @@
+body {
+    background-color: #111111;
+}
+
+p {
+    /*font-family: verdana;*/
+}
+
+nav {
+	background-color: black;
+    border-bottom: 1px solid gray;
+}
+
+.search-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-button {
+	color: black;
+	background-color: darkorange;
+}
+
+.meme-container {
+    /* border: 2px dotted red; */
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.meme-title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.meme-box {
+    background-color: #030303;
+    width: 100%;
+    /*border: 1px dotted lime;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.meme-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+    height: 24em;
+}
+
+.meme-info-views {
+    color: white;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 5px;
+    font-size: 1.2em;
+}
+
+.meme-info-rating {
+    color: darkorange;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.5em;
+}
+
+.meme-tabs {
+    border: 1px solid darkorange;
+}
+
+.meme-tab-label {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: verdana;
+    cursor: pointer;
+}
+
+.meme-tab-selected {
+    background-color: orange;
+    color: black;
+}
+
+.meme-tab-unselected {
+    background-color: black;
+    color: white;
+}
+
+.meme-tab-unselected:hover {
+    background-color: #222;
+}
+
+.meme-translations {
+    border: 1px solid darkorange;
+}
+
+.meme-translation-form {
+    border: 1px solid darkorange;
+    padding: 0.5em;
+}
+
+.meme-translation-form-button {
+    margin-top: 0.5em;
+    color: black;
+	background-color: darkorange;
+    padding: 3px;
+}
+
+.meme-comment-form {
+    border: 1px solid darkorange;
+    padding: 0.5em;
+}
+
+.meme-comment-form-button {
+    margin-top: 0.5em;
+    color: black;
+	background-color: darkorange;
+    padding: 3px;
+}
+
+.meme-bottom-option {
+    color: gray;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.meme-bottom-option:hover {
+    color: lightgray;
+}
+
+.meme-translation {
+    padding-left: 0px; 
+    padding-right: 0px;
+    border-bottom: 1px dotted gray;
+}
+
+.meme-translation-vote {
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    float: left;
+}
+
+.meme-translation-content {
+    color: lightgray;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-left: 0px;
+    padding-right: 5%;
+    font-size: 0.8em;
+}
+
+.meme-share {
+    color: darkgray;
+    position: absolute;
+    top: 10em;
+    right: -0.5em;
+    font-size: 2.4em;
+}
+
+.meme-download {
+    color: darkgray;
+    position: absolute;
+    margin-left: 100%;
+    font-size: 2em;
+}
+
+.create-button {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    color: black;
+    background-color: darkorange;
+    text-align: center;
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+}
+
+.create-button:hover {
+    background-color: orange;
+}
+
+.create-button-plus {
+    font-size: 1.9em;
+    font-weight: bold;
+    margin-bottom: 0px;
+    position: 
+}
+
+.centered-horiz {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logout-label {
+    color: darkorange;
+    position: relative;
+    margin-bottom: 0;
+    top: 20%;
+    cursor: pointer;
+}
+
+.logout-label:hover {
+    color: orange;
+}
+
+.star {
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.vote {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.vote:hover {
+    color: gray;
+}
+
+.vote-selected {
+    font-weight: bolder;
+    color: darkorange;
+}
+
+.arrow-left {
+    position: absolute;
+    display: block;
+    color: white;
+    right: 0;
+    top: 4em;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.arrow-right {
+    position: absolute;
+    display: block;
+    color: white;
+    left: 0;
+    top: 4em;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.arrow-left:hover {
+    color: darkgray;
+}
+
+.arrow-right:hover {
+    color: darkgray;
+}
+
+.download {
+    position: absolute;
+    display: block;
+    color: white;
+    left: 0;
+    top: 15em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.share {
+    position: absolute;
+    display: block;
+    color: white;
+    left: 0;
+    top: 16.6em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.download:hover {
+    color: darkgray;
+}
+
+.share:hover {
+    color: darkgray;
+}
+
+
+.blind {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    opacity: 0.9;
+    display: none;
+}
+
+.popup {
+    background-color: #FFF;
+    z-index: 2000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.share-icon {
+    cursor: pointer;
+}
+
+.share-icon:hover {
+    color: darkorange;
+}
+
+.layout-select {
+    position: fixed;
+    bottom: 0.3em;
+    left: 0.3em;
+    font-size: 2em;
+    color: white;
+}
+
+.layout-select-arrow {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.layout-select-unselected:hover {
+    color: gray;
+}
+
+.layout-select-selected {
+    color: darkorange;
+}
+
+.create-image-container {
+    text-align: center;    
+}
+
+.create-image {
+    background-color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: 20em;
+    height: 15em;
+    border: 0;
+    border: 2px solid black;
+    text-indent: -10000px
+}
+
+.upload-button {
+    position: relative;
+    top: -9em;
+    background-color: darkorange;
+    color: black;
+}
+
+.create-form-button {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.layout-profile {
+    text-align: center;
+    color: white
+}
